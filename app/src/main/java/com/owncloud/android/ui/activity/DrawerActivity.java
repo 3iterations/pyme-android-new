@@ -434,12 +434,12 @@ public abstract class DrawerActivity extends ToolbarActivity
         imageHeader.setImageDrawable(drawable);
         imageHeader.setAdjustViewBounds(true);
 
-        if (!TextUtils.isEmpty(serverName)) {
-            TextView serverNameView = mNavigationViewHeader.findViewById(R.id.drawer_header_server_name);
-            serverNameView.setVisibility(View.VISIBLE);
-            serverNameView.setText(serverName);
-            serverNameView.setTextColor(themeColorUtils.unchangedFontColor(this));
-        }
+//        if (!TextUtils.isEmpty(serverName)) {
+//            TextView serverNameView = mNavigationViewHeader.findViewById(R.id.drawer_header_server_name);
+//            serverNameView.setVisibility(View.VISIBLE);
+//            serverNameView.setText(serverName);
+//            serverNameView.setTextColor(themeColorUtils.unchangedFontColor(this));
+//        }
 
     }
 

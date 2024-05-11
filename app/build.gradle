@@ -102,6 +102,15 @@ android {
         generateLocaleConfig = true
     }
 
+    signingConfigs {
+        release {
+            storeFile file("cloud.keystore")
+            storePassword "3ssA9*5weF^VMQF6"
+            keyAlias "android"
+            keyPassword "3ssA9*5weF^VMQF6"
+        }
+    }
+
     defaultConfig {
         minSdkVersion 24
         targetSdkVersion 34
@@ -120,7 +129,7 @@ android {
         if (shotTest) {
             testInstrumentationRunner "com.karumi.shot.ShotTestRunner"
         } else {
-            testInstrumentationRunner "com.nextcloud.client.TestRunner"
+            testInstrumentationRunner "com.heyvalue.cloud.TestRunner"
         }
         testInstrumentationRunnerArgument "TEST_SERVER_URL", "${NC_TEST_SERVER_BASEURL}"
         testInstrumentationRunnerArgument "TEST_SERVER_USERNAME", "${NC_TEST_SERVER_USERNAME}"
@@ -148,6 +157,11 @@ android {
             debug {
                 testCoverageEnabled(project.hasProperty('coverage'))
             }
+
+            release {
+                signingConfig signingConfigs.release
+                minifyEnabled false
+            }
         }
 
         buildFeatures {
@@ -157,29 +171,29 @@ android {
         productFlavors {
             // used for f-droid
             generic {
-                applicationId 'com.nextcloud.client'
+                applicationId 'com.heyvalue.cloud'
                 dimension "default"
             }
 
             gplay {
-                applicationId 'com.nextcloud.client'
+                applicationId 'com.heyvalue.cloud'
                 dimension "default"
             }
 
             huawei {
-                applicationId 'com.nextcloud.client'
+                applicationId 'com.heyvalue.cloud'
                 dimension "default"
             }
 
             versionDev {
-                applicationId "com.nextcloud.android.beta"
+                applicationId "com.heyvalue.cloud.beta"
                 dimension "default"
                 versionCode 20220322
                 versionName "20220322"
             }
 
             qa {
-                applicationId "com.nextcloud.android.qa"
+                applicationId "com.heyvalue.cloud.qa"
                 dimension "default"
                 versionCode 1
                 versionName "1"

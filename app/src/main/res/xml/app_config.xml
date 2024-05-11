@@ -21,7 +21,7 @@
 
     <restriction
         android:key="base_url"
-        android:defaultValue=""
+        android:defaultValue="https://cloud.heyvalue.com"
         android:restrictionType="string"
         android:title="@string/app_config_base_url_title" />
 

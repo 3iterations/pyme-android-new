@@ -125,11 +125,10 @@ public class GetServerInfoOperation extends RemoteOperation {
         return url;
     }
 
-
     public static class ServerInfo {
         public OwnCloudVersion mVersion;
         public boolean hasExtendedSupport;
-        public String mBaseUrl = "";
+        public String mBaseUrl = "https://cloud.heyvalue.com";
         public AuthenticationMethod mAuthMethod = AuthenticationMethod.UNKNOWN;
         public boolean mIsSslConn;
     }
